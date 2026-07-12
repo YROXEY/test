@@ -1,0 +1,849 @@
+/* =========================
+   YROXEY V5 REMASTERED
+   PART 1
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+background:
+radial-gradient(circle at top,#00ffff18,transparent 30%),
+radial-gradient(circle at bottom,#0066ff20,transparent 35%),
+#050509;
+
+color:white;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+
+/* Cyber Background */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+linear-gradient(rgba(0,255,255,.08) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(0,255,255,.08) 1px,transparent 1px);
+
+background-size:45px 45px;
+
+animation:gridMove 15s linear infinite;
+
+z-index:-2;
+
+opacity:.5;
+
+}
+
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle,#00ffff22 2px,transparent 2px);
+
+background-size:60px 60px;
+
+animation:dotMove 12s linear infinite;
+
+z-index:-1;
+
+opacity:.35;
+
+}
+
+
+@keyframes gridMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(45px);
+}
+
+}
+
+
+@keyframes dotMove{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(60px,60px);
+}
+
+}
+
+
+/* Container */
+
+.container{
+
+width:92%;
+
+max-width:520px;
+
+margin:auto;
+
+padding:40px 0;
+
+}
+
+
+/* Logo */
+
+h1{
+
+font-size:55px;
+
+letter-spacing:8px;
+
+text-align:center;
+
+color:white;
+
+text-shadow:
+
+0 0 10px #00ffff,
+
+0 0 25px #00ffff,
+
+0 0 60px #00ffff;
+
+animation:logoGlow 4s infinite;
+
+}
+
+
+@keyframes logoGlow{
+
+0%,100%{
+
+text-shadow:
+
+0 0 10px #00ffff,
+
+0 0 25px #00ffff,
+
+0 0 60px #00ffff;
+
+}
+
+50%{
+
+text-shadow:
+
+0 0 20px #00ffff,
+
+0 0 45px #00ffff,
+
+0 0 90px #00ffff;
+
+}
+
+}
+
+
+/* Subtitle */
+
+.tagline{
+
+margin-top:10px;
+
+text-align:center;
+
+color:#00d9ff;
+
+letter-spacing:4px;
+
+font-size:15px;
+
+text-shadow:0 0 10px #00d9ff;
+
+}
+
+
+.status{
+
+margin:25px auto;
+
+display:block;
+
+width:max-content;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+border:1px solid #00ffff;
+
+background:rgba(0,255,255,.08);
+
+backdrop-filter:blur(8px);
+
+color:#00ffff;
+
+box-shadow:0 0 20px rgba(0,255,255,.2);
+
+animation:pulse 2.5s infinite;
+
+}
+
+
+@keyframes pulse{
+
+50%{
+
+box-shadow:
+
+0 0 35px rgba(0,255,255,.5);
+
+}
+
+}
+
+
+/* Description */
+
+.container p{
+
+margin-top:18px;
+
+text-align:center;
+
+color:#cfcfcf;
+
+line-height:1.7;
+
+}
+/* =========================
+   YROXEY V5 REMASTERED
+   PART 2
+========================= */
+
+/* عنوان ارز */
+
+.coin-title{
+
+font-size:22px;
+
+font-weight:bold;
+
+margin:30px 0 15px;
+
+text-shadow:0 0 12px rgba(0,255,255,.6);
+
+}
+
+
+/* کارت */
+
+.wallet-box{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+padding:20px;
+
+margin-bottom:22px;
+
+border-radius:22px;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+135deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.02)
+);
+
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(0,255,255,.25);
+
+box-shadow:
+
+0 0 20px rgba(0,255,255,.12),
+
+inset 0 0 20px rgba(255,255,255,.04);
+
+transition:.35s;
+
+}
+
+
+/* نور متحرک */
+
+.wallet-box::before{
+
+content:"";
+
+position:absolute;
+
+top:-150%;
+
+left:-60%;
+
+width:60%;
+
+height:400%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.25),
+
+transparent
+
+);
+
+transform:rotate(25deg);
+
+animation:shine 6s linear infinite;
+
+}
+
+
+@keyframes shine{
+
+0%{
+
+left:-70%;
+
+}
+
+100%{
+
+left:160%;
+
+}
+
+}
+
+
+/* لمس کارت */
+
+.wallet-box:active{
+
+transform:
+
+perspective(900px)
+
+rotateX(5deg)
+
+scale(.98);
+
+box-shadow:
+
+0 0 35px rgba(0,255,255,.35);
+
+}
+
+
+/* آدرس */
+
+.wallet-box span{
+
+flex:1;
+
+word-break:break-all;
+
+font-size:13px;
+
+color:#fff;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+/* دکمه */
+
+.wallet-box button{
+
+position:relative;
+
+overflow:hidden;
+
+padding:12px 18px;
+
+border:none;
+
+border-radius:14px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#00ffff,
+
+#0066ff
+
+);
+
+color:#000;
+
+box-shadow:
+
+0 0 18px rgba(0,255,255,.45);
+
+transition:.3s;
+
+z-index:2;
+
+}
+
+
+.wallet-box button:active{
+
+transform:scale(.92);
+
+}
+
+
+/* موج نور */
+
+.wallet-box button::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.5),
+
+transparent
+
+);
+
+transition:.5s;
+
+}
+
+
+.wallet-box button:active::before{
+
+left:120%;
+
+}
+
+
+/* رنگ ارزها */
+
+.usdt{
+
+color:#00ff88;
+
+text-shadow:
+
+0 0 10px #00ff88;
+
+}
+
+
+.ton{
+
+color:#00bfff;
+
+text-shadow:
+
+0 0 10px #00bfff;
+
+}
+
+
+.tron{
+
+color:#ff3355;
+
+text-shadow:
+
+0 0 10px #ff3355;
+
+}
+
+
+/* آیکون‌ها */
+
+.usdt-icon{
+
+filter:drop-shadow(0 0 10px #00ff88);
+
+}
+
+.ton-icon{
+
+filter:drop-shadow(0 0 10px #00bfff);
+
+}
+
+.trx-icon{
+
+color:#ff3355;
+
+filter:drop-shadow(0 0 10px #ff3355);
+
+}
+/* =========================
+   YROXEY V5 REMASTERED
+   PART 3
+========================= */
+
+
+/* ---------- ورود کارت‌ها ---------- */
+
+.wallet-box{
+
+opacity:0;
+
+animation:cardShow .8s ease forwards;
+
+}
+
+.wallet-box:nth-of-type(1){
+
+animation-delay:.2s;
+
+}
+
+.wallet-box:nth-of-type(2){
+
+animation-delay:.45s;
+
+}
+
+.wallet-box:nth-of-type(3){
+
+animation-delay:.7s;
+
+}
+
+
+@keyframes cardShow{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(40px)
+
+scale(.95);
+
+filter:blur(6px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+filter:blur(0);
+
+}
+
+}
+
+
+/* ---------- Toast ---------- */
+
+#toast{
+
+position:fixed;
+
+left:50%;
+
+bottom:30px;
+
+transform:
+
+translateX(-50%)
+
+translateY(80px);
+
+padding:14px 24px;
+
+border-radius:18px;
+
+background:
+
+rgba(0,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border:1px solid #00ffff;
+
+color:white;
+
+box-shadow:
+
+0 0 25px rgba(0,255,255,.35);
+
+opacity:0;
+
+transition:.35s;
+
+z-index:999;
+
+}
+
+
+#toast.show{
+
+opacity:1;
+
+transform:
+
+translateX(-50%)
+
+translateY(0);
+
+}
+
+
+/* ---------- Footer ---------- */
+
+footer{
+
+margin-top:45px;
+
+text-align:center;
+
+font-size:14px;
+
+color:#9a9a9a;
+
+opacity:.85;
+
+}
+
+
+footer span{
+
+color:#00ffff;
+
+text-shadow:
+
+0 0 10px #00ffff;
+
+}
+
+
+/* ---------- Scroll ---------- */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#070707;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#00bfff;
+
+border-radius:10px;
+
+}
+
+
+/* ---------- انتخاب متن ---------- */
+
+::selection{
+
+background:#00bfff;
+
+color:black;
+
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:480px){
+
+h1{
+
+font-size:42px;
+
+letter-spacing:5px;
+
+}
+
+.coin-title{
+
+font-size:19px;
+
+}
+
+.wallet-box{
+
+padding:16px;
+
+gap:10px;
+
+}
+
+.wallet-box button{
+
+padding:10px 15px;
+
+font-size:13px;
+
+}
+
+}
+/* ===== YROXEY PROJECT SUPPORT ===== */
+
+
+.support-header{
+
+text-align:center;
+
+margin:35px 0;
+
+padding:25px;
+
+background:
+
+rgba(255,255,255,.05);
+
+border-radius:30px;
+
+border:1px solid rgba(0,255,255,.25);
+
+backdrop-filter:blur(12px);
+
+box-shadow:
+
+0 0 30px rgba(0,255,255,.15);
+
+}
+
+
+.support-icon{
+
+font-size:50px;
+
+margin-bottom:15px;
+
+animation:
+rocketFloat 3s infinite;
+
+}
+
+
+@keyframes rocketFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+
+.support-header h2{
+
+color:#00ffff;
+
+font-size:24px;
+
+text-shadow:
+
+0 0 15px #00ffff;
+
+}
+
+
+.support-header p{
+
+color:#bbb;
+
+line-height:1.8;
+
+margin-top:15px;
+
+}
